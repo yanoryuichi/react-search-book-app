@@ -7,7 +7,12 @@ class Search extends React.Component {
         const url = `https://www.googleapis.com/books/v1/volumes?q=${book}`
         const response = await fetch(url);
         const data = await response.json();
-        alert(JSON.stringify(data));
+        data.items.map((item => {
+            const id = item.id;
+            const title = item.volumeInfo.title;
+            const image = item.volumeInfo.imageLinks.thumbnail;
+            console.log({id, title, image});
+        }));
     }
 
     render() {
