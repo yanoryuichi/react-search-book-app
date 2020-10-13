@@ -1,9 +1,13 @@
 
 class Search extends React.Component {
-    search(evt) {
+    async search(evt) {
         evt.preventDefault();
         const form = evt.target;
-        alert(form.book.value);
+        const book = form.book.value;
+        const url = `https://www.googleapis.com/books/v1/volumes?q=${book}`
+        const response = await fetch(url);
+        const data = await response.json();
+        alert(JSON.stringify(data));
     }
 
     render() {
