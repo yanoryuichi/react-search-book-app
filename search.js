@@ -1,7 +1,15 @@
 
 class Search extends React.Component {
     render() {
-        return <h1>Search</h1>;
+        return (
+            <div>
+                <h1>Search</h1>
+                <form>
+                    <input type="text" />
+                    <button>Search</button>
+                </form>
+            </div>
+        );
     }
 }
 
